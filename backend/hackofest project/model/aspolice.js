@@ -1,0 +1,44 @@
+const mongoose=require("mongoose");
+const asPolice=new mongoose.Schema({
+    name:{
+        type:String,
+        required:true
+    },
+    AadharNo:{
+        type:Number,
+        unique:true,
+        required:true
+    },
+    country:{
+        type:String,
+        required:true
+    },
+    Address:{
+        type:String,
+        required:true
+    },
+    city:{
+        type:String,
+        required:true
+    },
+    pincode:{
+        type:Number,
+        required:true
+    },
+    phonenumber:{
+        type:Number,
+        unique:true,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    },
+    policeid:{
+        type:Number,
+        unique:true,
+        required:true
+    },
+},{timestamps:true});
+const polices =mongoose.model("polices",asPolice)
+module.exports=polices;
